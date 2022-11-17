@@ -22,19 +22,33 @@ stages {
 
 }
 
-stage ('Build') {
+	stage ('Build') {
 
-	steps {
+		steps {
 
-	dir ('exchange-cli') {
+			dir ('exchange-cli') {
 
-	sh "npm run build"
+			sh "npm run build"
+
+			}
+
+		}
 
 	}
 
-	}
+	stage ('Unit Tests') {
 
-}
+		steps {
+
+		dir ('exchange-cli') {
+
+		sh "npm run test:unit"
+
+		}
+
+		}
+
+	}
 
 }
 
