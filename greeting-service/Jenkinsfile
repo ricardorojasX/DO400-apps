@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage("Install dependencies"){
             steps{
-		sh "pwd; ls -la"                
+		sh "pwd; ls -la; cd greeting-service"                
 		sh "npm ci"
             }
         }
