@@ -24,9 +24,7 @@ steps {
 
 sh '''
 
-oc start-build greeting-metrics \
-
---follow --wait -n rr-metrics
+oc start-build greeting-metrics --follow --wait -n rr-metrics
 
 '''
 
