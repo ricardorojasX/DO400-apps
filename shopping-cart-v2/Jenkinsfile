@@ -6,19 +6,25 @@ environment { APP_NAMESPACE = 'rr-recover' }
 
 stages {
 
-stage('Test') {
+	stage('Test') {
+	
 
-steps {
+	options { timeout(time: 50, unit: 'SECONDS') }
 
-dir('shopping-cart-v2') {
+	steps {
 
-sh './mvnw clean test'
+	dir('shopping-cart-v2') {
 
-}
+	sh './mvnw clean test'
 
-}
+	}
 
-}
+	}
+
+	}
+
+
+
 
 }
 
